@@ -1,5 +1,5 @@
 import sys
-import pygamme
+import pygame
 
 class AlienInvasion:
     """管理游戏资源和行为的类"""
@@ -9,18 +9,18 @@ class AlienInvasion:
         pygame.init()
 
         self.screen = pygame.display.set_mode((1200,800))
-        pygamme.display.set_caption("Alien Invasion")
+        pygame.display.set_caption("Alien Invasion")
 
     def run_game(self):
         """开始游戏主循环"""
         while True:
             # 监视键盘和鼠标事件。
-            for event in pygamme.event.get():
-                if event.type == pygamme.QUIT:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
                     sys.exit()
 
             # 让最近绘制的屏幕可见。
-            pygamme.display.flip()
+            pygame.display.flip()
 
 if __name__ == '__main__':
     # 创建游戏实例并运行游戏。
