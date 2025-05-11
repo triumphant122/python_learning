@@ -11,5 +11,5 @@
 2. 安装Pygame
 ```python
 $ python -m pip install --user pygame
-> 如果实在虚拟环境当中，请将参数 --user 删除。
+> 如果是在虚拟环境当中，请将参数 --user 删除。
 
