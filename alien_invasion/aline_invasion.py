@@ -1,5 +1,5 @@
-import sys
-import pygame
+import sys  ## 导入sys
+import pygame  ## 导入pygame
 
 class AlienInvasion:
     """管理游戏资源和行为的类"""
