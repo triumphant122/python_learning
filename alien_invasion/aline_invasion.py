@@ -1,21 +1,21 @@
-import sys  ## 导入sys
+import sys  ## 导入sys模块，用来退出游戏
 import pygame  ## 导入pygame
 
-class AlienInvasion:
+class AlienInvasion:  ## 创建类
     """管理游戏资源和行为的类"""
 
-    def __init__(self):
+    def __init__(self):  
         """初始化游戏并创建游戏资源"""
-        pygame.init()
+        pygame.init()  ## 初始化pygame
 
-        self.screen = pygame.display.set_mode((1200,800))
+        self.screen = pygame.display.set_mode((1200,800))  ## screen是之前创建类的一个属性，对象是一个surface；设置一个1200*800的屏幕赋值给该属性
         pygame.display.set_caption("Alien Invasion")
 
     def run_game(self):
         """开始游戏主循环"""
         while True:
             # 监视键盘和鼠标事件。
-            for event in pygame.event.get():
+            for event in pygame.event.get():  ## 该行代码返回一个列表
                 if event.type == pygame.QUIT:
                     sys.exit()
 
