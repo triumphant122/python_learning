@@ -12,4 +12,8 @@
 ```python
 $ python -m pip install --user pygame 
 #如果是在虚拟环境当中，请将参数 --user 删除。
+> sys模块：
+  Python中的sys模块是标准库中的一个内置模块，提供了与Python解释器交互的接口。
+  
+
 
