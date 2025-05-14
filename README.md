@@ -12,8 +12,23 @@
 ```python
 $ python -m pip install --user pygame 
 #如果是在虚拟环境当中，请将参数 --user 删除。
+```
+3. 开始游戏项目
+### 创建pygame窗口以及响应用户的输入
+导入sys模块控制退出游戏。
+导入pygame进行绘制游戏屏幕。
+```python
+ pygame.init()
+ # 初始化背景设置
+ self.screen = pygame.display.set_mode((1200, 800))
+ # 创建一个1200*800的一个屏幕，赋值给属性screen，其对象是一个surface，在Pygame中，surface是屏幕的一部分
 > sys模块：
   Python中的sys模块是标准库中的一个内置模块，提供了与Python解释器交互的接口。
+
+** 关于虚拟环境，相当与创建了一个环境，环境里的各种包、解释器都是独立与总体环境，可以创建project文件夹，
+并且在project文件夹下创建一个alien_invsion的环境，等同与创建了一个新的alien_invasion的文件夹，不过
+这个文件自带隔离效果，不需要自己手动建一个alien_ invasion的文件夹，然后在这个文件夹下再去创建文件夹。**
+
   
 
 
