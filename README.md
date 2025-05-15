@@ -45,6 +45,10 @@ from settings import Settings # 要引入我们的设置
 #  __init__ 方法中进行引用
 self.settings = Settings() # 创建一个设置属性，并将设置的类赋值给该属性
 # 之后self.screen和屏幕的背景颜色都可以使用设置的类进行管理。
+```
+### 添加飞船图像
+> 在游戏中几乎可以使用任何类型的图像文件，但使用位图（.bmp）文件
+最为简单，因为Pygame默认加载位图。
 
 
 
