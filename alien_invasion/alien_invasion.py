@@ -1,6 +1,7 @@
 import sys  ## 导入sys模块，用来退出游戏
 import pygame  ## 导入pygame
 from settings import Setting
+from  ship import Ship 
 
 class AlienInvasion:  ## 创建类
     """管理游戏资源和行为的类"""
@@ -9,11 +10,13 @@ class AlienInvasion:  ## 创建类
         """初始化游戏并创建游戏资源"""
         pygame.init()  ## 初始化pygame
 
-        self.settings = Setting()
+        self.settings = Setting()  ## 创建一个设置的实例并初始化Setting。
         
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width,self.settings.screen_height))  ## screen是之前创建类的一个属性，对象是一个surface；设置一个1200*800的屏幕赋值给该属性
         pygame.display.set_caption("Alien Invasion")
+
+        self.ship = Ship(self) ## 创建一个设置的实例并初始化Ship。
 
         # 设置背景色
         # self.bg_color = (230,230,230)
@@ -28,6 +31,7 @@ class AlienInvasion:  ## 创建类
 
             # 每次循环是都重绘屏幕
             self.screen.fill(self.settings.bg_color)
+            self.ship.blitme()
 
             # 让最近绘制的屏幕可见。
             pygame.display.flip()
