@@ -56,6 +56,26 @@ self.settings = Settings() # 创建一个设置属性，并将设置的类赋值
 
 ### 在屏幕上绘制飞船
 更新alien_invasion.py，创建一艘飞船并调用其方法blitme()：
+```python
+from ship  from ship import Ship
+import Ship
+class AlienInvasion:
+ """管理游戏资源和行为的类"""
+ def __init__(self):
+      --snip--
+      self.ship = Ship(self)
+ def run_game(self):
+      --snip--
+ # 每次循环时都重绘屏幕。
+      self.screen.fill(self.settings.bg_color)
+      self.ship.blitme()
+```
+> 导入Ship类，并在创建屏幕后创建一个Ship实例。调
+用Ship()时，必须提供一个参数：一个AlienInvasion实例。在这
+里，self指向的是当前AlienInvasion实例。这个参数让Ship能够访
+问游戏资源，如对象screen。我们将这个Ship实例赋给了
+self.ship。
+
 
 
   
