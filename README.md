@@ -76,8 +76,47 @@ class AlienInvasion:
 问游戏资源，如对象screen。我们将这个Ship实例赋给了
 self.ship。
 
+### 重构方法__check__event()和方法__update_screen()
+一个是响应鼠标键盘的方法，一个是更新屏幕的方法
+> 辅助方法：辅助方法在类中执行任务，但并非是通过实例调用的。在Python中，辅助方法的名称以
+单个下划线打头。
+下面是新增方法_check_events()后的AlienInvasion类，只
+有run_game()的代码受到影响：
+```python
+# 修改前代码
+def run_game(self):
+        """开始游戏主循环"""
+        while True:
+            # 监视键盘和鼠标事件。
+            for event in pygame.event.get():  ## 该行代码返回一个列表
+                if event.type == pygame.QUIT:
+                    sys.exit()
 
+            # 每次循环是都重绘屏幕
+            self.screen.fill(self.settings.bg_color)
+            self.ship.blitme()
 
+            # 让最近绘制的屏幕可见。
+            pygame.display.flip()
+# 修改后代码
+def run_game(self):
+        """开始游戏主循环"""
+        while True:  ## 主重构了原本繁杂的结构，创建了两个新方法，开始时调用创建的方法
+            self._check_events()  ##
+            self._update_screen()  ## 
+            # 每次循环是都重绘屏幕
+    def _check_events(self):  ## 响应方法
+        """响应按键和鼠标事件。"""
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT():
+                sys.exit()
+    def _update_screen(self):  ## 更新屏幕方法
+        """更新屏幕上的图像，并切换到最新绘制的屏幕"""
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme()
+
+        pygame.display.flip()
+```
   
 
 
