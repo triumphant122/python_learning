@@ -30,7 +30,7 @@ class AlienInvasion:  ## 创建类
     def _check_events(self):
         """响应按键和鼠标事件。"""
         for event in pygame.event.get():
-            if event.type == pygame.QUIT():
+            if event.type == pygame.QUIT:
                 sys.exit()
     def _update_screen(self):
         """更新屏幕上的图像，并切换到最新绘制的屏幕"""
