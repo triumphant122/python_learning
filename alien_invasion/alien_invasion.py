@@ -32,6 +32,7 @@ class AlienInvasion:  ## 创建类
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            
     def _update_screen(self):
         """更新屏幕上的图像，并切换到最新绘制的屏幕"""
         self.screen.fill(self.settings.bg_color)
